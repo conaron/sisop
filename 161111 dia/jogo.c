@@ -13,8 +13,10 @@ int main(int argc, char** argv) {
     construcao(barcos[0], grade_usr);
     construcao(barcos[1], grade_cpu);
 
-    executa_transacao(tela, 0);
-    teste(mapa[0]);
+    principal();
+
+    //    executa_transacao(abertura, 0);
+    //    teste(mapa[0]);
 
     //    for (i = 0; i < T; i++)
     //        printf("%d", mapa[0][0][i]);

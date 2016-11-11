@@ -48,7 +48,3 @@ void construcao(int barco[10], int grade[T][T]) { // distribuicao dos barcos na 
     }
 }
 
-void teste(int grade[T][T]) {
-    int i;
-    for (i = 0; i < T; i++) grade[0][i] = 1;
-}

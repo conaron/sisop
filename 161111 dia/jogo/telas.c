@@ -1,4 +1,42 @@
-char conversao(int celula) {   // troca o valor do bloco para impressão (cria máscara)
+char tela(char tela[TT]) {
+    strcpy(tela,
+            "\n\n\n"
+            "          * ---------------------------------------------------------------------------------------------------- *\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          * ---------------------------------------------------------------------------------------------------- *\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          |                                                                                                      |\n"
+            "          * ---------------------------------------------------------------------------------------------------- *\n"
+            );
+}
+
+char teste(char retorno[TT]) {
+    int i;
+    tela(retorno);
+    char *titulo = "* T E S T E *";
+
+    for (i = 0; i < strlen(titulo); i++)
+        retorno[i + 238] = titulo[i];
+}
+
+char conversao(int celula) { // troca o valor do bloco para impressão (cria máscara)
     switch (celula) {
         case 0:
             return ' ';
@@ -15,10 +53,10 @@ char conversao(int celula) {   // troca o valor do bloco para impressão (cria má
     }
 }
 
-char *linha(char *borda, char *padrao) {     // preenche uma linha com um padrão (tipo repeticao)
-    int i;
+char *linha(char *borda, char *padrao) { // preenche uma linha com um padrão (tipo repeticao)
+    int i, margem = 10;
     char linha[150] = "";
-    for (i = 0; i < 10; i++) strcat(linha, " ");
+    for (i = 0; i < margem; i++) strcat(linha, " ");
     strcat(linha, borda);
     strcat(linha, " ");
     for (i = 0; i < 100; i++) strcat(linha, padrao);
@@ -28,7 +66,7 @@ char *linha(char *borda, char *padrao) {     // preenche uma linha com um padrão
     return (linha);
 }
 
-char *centralizar(char *campo) {            // centraliza a linha dentro da grade
+char *centralizar(char *campo) { // centraliza a linha dentro da grade
     int i;
     int margem = (100 - strlen(campo)) / 2;
     char linha[150] = "";
@@ -56,7 +94,7 @@ char *gaiola(char entrada[3000]) {
     return (grade);
 }
 
-void jogo() {
+void acao() {
     int i, j;
     int x, y;
     int jogada = 999;
@@ -113,7 +151,7 @@ void jogo() {
         jogador++;
     else
         jogador--;
-    jogo();
+    acao();
 }
 
 void ajuda() {
@@ -372,7 +410,7 @@ void abertura(int borda) {
 
         switch (opcao) {
             case 1:
-                jogo();
+                acao();
                 break;
             case 2:
                 staff();

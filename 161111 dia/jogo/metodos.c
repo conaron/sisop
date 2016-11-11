@@ -8,6 +8,11 @@ void executa_transacao(void *funcao, long arg) {
     }
 }
 
-void tela() {
-    abertura(25);
+void principal() {
+    char grade[TT];
+
+    teste(grade);
+    puts(grade);
+
+//    abertura(25);
 }
